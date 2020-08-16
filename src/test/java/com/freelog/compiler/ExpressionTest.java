@@ -12,20 +12,24 @@ import org.antlr.v4.runtime.tree.*;
 /**
  * Unit test for simple App.
  */
-public class LexerTest 
+public class ExpressionTest 
 {
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void parseTokens() throws Exception
+    public void parseExpressions() throws Exception
     {
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-cases/lexer/tokens");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-cases/expression/expressions");
         ANTLRInputStream input = new ANTLRInputStream (inputStream);
-        LexToken lexer = new LexToken (input);
+        ExpressionLexer lexer = new ExpressionLexer (input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
-        tokens.fill();
+        ExpressionParser parser = new ExpressionParser(tokens);
+        parser.setBuildParseTree(true);
+        RuleContext tree = parser.expression();
         System.out.println(tokens.getTokens());
+        System.out.println(tree.toStringTree(parser));
+        
         for ( Token token : tokens.getTokens()) {
             System.out.println(token.getText());
         }

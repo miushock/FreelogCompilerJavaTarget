@@ -1,4 +1,4 @@
-// Generated from ./target/generated_grammar/Entity.g4 by ANTLR 4.8
+// Generated from .\target\generated_grammar\Entity.g4 by ANTLR 4.8
 package com.freelog.compiler;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

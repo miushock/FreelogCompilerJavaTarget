@@ -18,7 +18,7 @@ public class EntityTest
      * Rigorous Test :-)
      */
     @Test
-    public void parseTokens() throws Exception
+    public void parseEntities() throws Exception
     {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-cases/entity/entities");
         ANTLRInputStream input = new ANTLRInputStream (inputStream);
@@ -27,6 +27,7 @@ public class EntityTest
         EntityParser parser = new EntityParser(tokens);
         parser.setBuildParseTree(true);
         RuleContext tree = parser.entity_bracket();
+        System.out.println(tokens.getTokens());
         System.out.println(tree.toStringTree(parser));
         assertTrue( true );
     }
