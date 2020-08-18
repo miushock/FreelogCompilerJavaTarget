@@ -1,0 +1,4 @@
+require contract with ^Resource.freelog_official.*A7689
+
+authorized init:
+    terminate
